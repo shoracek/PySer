@@ -36,8 +36,8 @@ jobs:
 #        pytest
     - name: Parse
       run: |
-        ./parse.sh
+        scripts/parse.sh
     - name: Evaluate
       run: |
-        ./eval.sh
+        scripts/eval.sh
 
