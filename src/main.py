@@ -68,12 +68,12 @@ def generate_json(input: str) -> str:
 
 
 def generate_json_files(input_path: str, output_path: str):
-    with open(input_path, "r") as file:
+    with open(input_path, "r", encoding="utf8") as file:
         input = file.read()
 
     output = generate_json(input)
 
-    with open(output_path, "w") as file:
+    with open(output_path, "w", encoding="utf8") as file:
         file.write(output)
 
 

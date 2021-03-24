@@ -5,7 +5,7 @@ import math
 from difflib import SequenceMatcher
 
 def load_file(file):
-    with open(file, "r") as f:
+    with open(file, "r", encoding="utf8") as f:
         return json.load(f)
 
 def check_title(actual, expected):
