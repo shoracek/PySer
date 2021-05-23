@@ -95,7 +95,8 @@ def parse_toc_without_dots(plain_text: str) -> List[Tuple[str, str, int]]:
     return postprocess_matches(matches) if matches is not None else []
 
 
-def postprocess_match(match: Tuple[str, str, str, str]) \
+def postprocess_match(match: Tuple[Optional[str], Optional[str],
+ Optional[str], Optional[str]]) \
         -> Optional[Tuple[str, str, int]]:
     if match[0] is not None and len(match[0]) != 0:
         return None
@@ -107,7 +108,8 @@ def postprocess_match(match: Tuple[str, str, str, str]) \
     return id, title, page
 
 
-def postprocess_matches(matches: List[Tuple[str, str, str, str]]) \
+def postprocess_matches(matches: List[Tuple[Optional[str], Optional[str],
+ Optional[str], Optional[str]]]) \
         -> List[Tuple[str, str, int]]:
     return list([r for r in map(postprocess_match, matches) if r is not None])
 
